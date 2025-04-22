@@ -1,6 +1,7 @@
 # 개발 전용 설정 파일
 .storybook/
 src/stories/
+dist/stories
 postcss.config.js
 tailwind.config.js
 vite.config.ts
