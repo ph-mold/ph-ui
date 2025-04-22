@@ -5,4 +5,4 @@ export { default as Tab } from "./Tab";
 
 export * from "./skeleton";
 
-export * from "./types";
+import "./types";

@@ -14,9 +14,12 @@
   ],
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
       "import": "./dist/ph-ui.es.js",
       "require": "./dist/ph-ui.cjs.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "default": "./dist/types.js"
     },
     "./dist/ph-ui.css": "./dist/ph-ui.css"
   },

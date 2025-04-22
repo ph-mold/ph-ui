@@ -1,4 +1,4 @@
-import { useDelayedRender } from "@/hooks/useDelayRender";
+import { useDelayedRender } from "../hooks/useDelayRender";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface Props {
