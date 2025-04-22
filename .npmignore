@@ -1,10 +1,20 @@
-node_modules/
-src
-.vscode
-.idea
-tsconfig.json
-vite.config.ts
+# 개발 전용 설정 파일
 .storybook/
-stories/
-dist/storybook/
-*.stories.tsx
+src/stories/
+postcss.config.js
+tailwind.config.js
+vite.config.ts
+tsconfig.json
+
+# 소스 코드 (빌드 결과물만 포함)
+src/
+
+# 빌드 불필요 파일
+*.log
+*.md~
+*.tsbuildinfo
+node_modules/
+
+# 기타 IDE/OS 파일
+.DS_Store
+.env*
