@@ -15,8 +15,7 @@
   "exports": {
     ".": {
       "import": "./dist/ph-ui.es.js",
-      "require": "./dist/ph-ui.cjs.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/ph-ui.cjs.js"
     },
     "./dist/ph-ui.css": "./dist/ph-ui.css"
   },
