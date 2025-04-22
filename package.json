@@ -1,0 +1,25 @@
+{
+  "name": "ph-ui",
+  "version": "1.0.0",
+  "description": "ph-mold ui",
+  "keywords": [
+    "ui",
+    "react",
+    "storybook"
+  ],
+  "homepage": "https://github.com/ph-mold/ph-ui#readme",
+  "bugs": {
+    "url": "https://github.com/ph-mold/ph-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ph-mold/ph-ui.git"
+  },
+  "license": "ISC",
+  "author": "l11040",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
