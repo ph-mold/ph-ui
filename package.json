@@ -5,6 +5,10 @@
   "main": "dist/ph-ui.cjs.js",
   "module": "dist/ph-ui.es.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "exports": {
     "./dist/ph-ui.css": "./dist/ph-ui.css"
   },
