@@ -1,0 +1,10 @@
+node_modules/
+src
+.vscode
+.idea
+tsconfig.json
+vite.config.ts
+.storybook/
+stories/
+dist/storybook/
+*.stories.tsx
