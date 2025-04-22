@@ -1,15 +1,23 @@
 {
-  "name": "ph-ui",
-  "version": "1.0.0",
+  "name": "@ph-mold/ph-ui",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/ph-ui.cjs.js",
   "module": "dist/ph-ui.es.js",
   "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "dist",
     "README.md"
   ],
   "exports": {
+    ".": {
+      "import": "./dist/ph-ui.es.js",
+      "require": "./dist/ph-ui.cjs.js",
+      "types": "./dist/index.d.ts"
+    },
     "./dist/ph-ui.css": "./dist/ph-ui.css"
   },
   "scripts": {
