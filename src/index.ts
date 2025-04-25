@@ -1,9 +1,9 @@
 import "./index.css";
 
-export { default as Button } from "./Button";
-export { default as Tab } from "./Tab";
+export * from "./Button";
+export * from "./Tab";
 export * from "./TextArea";
-
-export * from "./skeleton";
+export * from "./Input";
+export * from "./Skeleton";
 
 import "./types";

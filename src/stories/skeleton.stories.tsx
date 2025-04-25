@@ -1,4 +1,4 @@
-import { WithSkeleton, Skeleton } from "@/skeleton";
+import { WithSkeleton, Skeleton } from "@/Skeleton";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof WithSkeleton> = {
