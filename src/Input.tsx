@@ -27,7 +27,7 @@ const sizeStyles: Record<Size, string> = {
 };
 
 const variantStyles: Record<Variant, string> = {
-  outlined: "border border-background2 bg-reverseForground",
+  outlined: "border border-background2 bg-reverseForeground",
   filled: "bg-background2 border border-transparent",
   standard: "border-b border-background2 bg-transparent",
 };

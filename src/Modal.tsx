@@ -10,6 +10,8 @@ interface Props {
   onClose: () => void;
   title?: string | ReactNode;
   children: ReactNode;
+  className?: string;
+  bodyClassName?: string;
 }
 
 const backdropVariants = {
@@ -23,7 +25,14 @@ const contentVariants = {
   exit: { y: "100%", opacity: 0 },
 };
 
-export default function Modal({ open, onClose, title, children }: Props) {
+export default function Modal({
+  open,
+  onClose,
+  title,
+  children,
+  className: containerClassName,
+  bodyClassName: scrollAreaClassName,
+}: Props) {
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -54,7 +63,6 @@ export default function Modal({ open, onClose, title, children }: Props) {
           variants={backdropVariants}
           transition={{ duration: 0.2 }}
         >
-          {/* 모달 콘텐츠 */}
           <motion.div
             initial="hidden"
             animate="visible"
@@ -65,10 +73,10 @@ export default function Modal({ open, onClose, title, children }: Props) {
               "flex w-full flex-col bg-white shadow-xl",
               isMobile
                 ? "absolute right-0 bottom-0 left-0 h-[80dvh] rounded-t-2xl"
-                : "relative max-h-[90vh] max-w-lg rounded-2xl"
+                : "relative max-h-[90vh] max-w-lg rounded-2xl",
+              containerClassName
             )}
           >
-            {/* 타이틀 */}
             {title && (
               <div className="border-background2 flex items-center justify-between border-b px-4 pt-4 pb-2">
                 <div className="text-lg font-semibold">
@@ -86,8 +94,12 @@ export default function Modal({ open, onClose, title, children }: Props) {
               </div>
             )}
 
-            {/* 스크롤 가능한 영역 */}
-            <div className="flex-1 overflow-x-hidden overflow-y-auto px-4 py-6 sm:px-6 sm:py-8">
+            <div
+              className={clsx(
+                "flex-1 overflow-x-hidden overflow-y-auto px-4 py-6 sm:px-6 sm:py-8",
+                scrollAreaClassName
+              )}
+            >
               {children}
             </div>
           </motion.div>
