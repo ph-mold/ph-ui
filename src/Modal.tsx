@@ -101,7 +101,7 @@ export default function Modal({
             <div
               className={clsx(
                 "flex-1 overflow-x-hidden",
-                scrollableBody && "overflow-y-auto",
+                scrollableBody ? "overflow-y-auto" : "overflow-y-hidden",
                 paddedBody && "px-4 py-6 sm:px-6 sm:py-8"
               )}
             >
