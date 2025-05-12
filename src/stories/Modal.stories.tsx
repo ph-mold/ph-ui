@@ -7,6 +7,10 @@ const meta: Meta<typeof Modal> = {
   component: Modal,
   title: "Components/Modal",
   tags: ["autodocs"],
+  args: {
+    bodyClassName: "",
+    className: "",
+  },
 };
 
 export default meta;
@@ -14,13 +18,19 @@ export default meta;
 type Story = StoryObj<typeof Modal>;
 
 export const Default: Story = {
-  render: () => {
+  render: ({ bodyClassName, className }) => {
     const [open, setOpen] = useState(false);
 
     return (
       <div className="flex flex-col items-center justify-center h-screen">
         <Button onClick={() => setOpen(true)}>모달 열기</Button>
-        <Modal open={open} onClose={() => setOpen(false)} title="기본 모달">
+        <Modal
+          open={open}
+          onClose={() => setOpen(false)}
+          title="기본 모달"
+          className={className}
+          bodyClassName={bodyClassName}
+        >
           <p>이곳에 모달 내용이 들어갑니다.</p>
           <p>스크롤 가능한 영역도 테스트해보세요.</p>
         </Modal>
