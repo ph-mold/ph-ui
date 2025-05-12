@@ -10,8 +10,9 @@ interface Props {
   onClose: () => void;
   title?: string | ReactNode;
   children: ReactNode;
-  className?: string;
-  bodyClassName?: string;
+  scrollableBody?: boolean; // ✅ Y스크롤 여부
+  paddedBody?: boolean; // ✅ 내부 패딩 여부
+  maxWidth?: boolean;
 }
 
 const backdropVariants = {
@@ -30,8 +31,9 @@ export default function Modal({
   onClose,
   title,
   children,
-  className: containerClassName,
-  bodyClassName: scrollAreaClassName,
+  scrollableBody = true,
+  paddedBody = true,
+  maxWidth = true,
 }: Props) {
   useEffect(() => {
     if (open) {
@@ -70,11 +72,13 @@ export default function Modal({
             variants={contentVariants}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className={clsx(
-              containerClassName,
               "flex w-full flex-col bg-white shadow-xl",
               isMobile
                 ? "absolute right-0 bottom-0 left-0 h-[80dvh] rounded-t-2xl"
-                : "relative max-h-[90vh] max-w-lg rounded-2xl"
+                : clsx(
+                    "relative max-h-[90vh] rounded-2xl",
+                    maxWidth !== false && "max-w-lg" // ✅ 기본값 true
+                  )
             )}
           >
             {title && (
@@ -96,8 +100,9 @@ export default function Modal({
 
             <div
               className={clsx(
-                scrollAreaClassName,
-                "flex-1 overflow-x-hidden overflow-y-auto px-4 py-6 sm:px-6 sm:py-8"
+                "flex-1 overflow-x-hidden",
+                scrollableBody && "overflow-y-auto",
+                paddedBody && "px-4 py-6 sm:px-6 sm:py-8"
               )}
             >
               {children}
