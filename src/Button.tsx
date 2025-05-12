@@ -28,7 +28,7 @@ const baseStyles =
   "flex cursor-pointer inline-flex items-center select-none justify-center gap-1 rounded-md duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed";
 
 const variantStyles: Record<Variant, string> = {
-  contained: "text-white",
+  contained: "",
   outlined: "border",
   text: "bg-transparent",
 };
@@ -41,17 +41,17 @@ const sizeStyles: Record<Size, string> = {
 
 const colorStyles: Record<Color, Record<Variant, string>> = {
   primary: {
-    contained: "bg-signature hover:bg-signature/80",
+    contained: "text-reverseForeground bg-signature hover:bg-signature/80",
     outlined: "border-signature text-signature hover:bg-signature/10",
     text: "text-signature hover:bg-signature/10",
   },
   secondary: {
-    contained: "bg-foreground hover:bg-foreground/80",
+    contained: "text-foreground/80 bg-foreground/20 hover:bg-foreground/10",
     outlined: "border-foreground text-foreground hover:bg-foreground/10",
     text: "text-foreground hover:bg-foreground/5",
   },
   error: {
-    contained: "bg-error hover:bg-error/80",
+    contained: "text-reverseForeground bg-error hover:bg-error/80",
     outlined: "border-error text-error hover:bg-error/10",
     text: "text-error hover:bg-error/10",
   },
