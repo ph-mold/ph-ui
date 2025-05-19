@@ -1,6 +1,6 @@
 import { ReactNode, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { Button } from "@ph-mold/ph-ui";
+import Button from "./Button";
 
 interface AlertModalProps {
   open: boolean;
