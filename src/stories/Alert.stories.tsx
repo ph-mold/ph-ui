@@ -1,5 +1,5 @@
 import Button from "@/Button";
-import Alert, { GlobalAlert } from "@/Alert";
+import { Alert, GlobalAlert } from "@/Alert";
 import { useSetRecoilState } from "recoil";
 import { alertQueueState } from "@/Alert/alertAtom";
 import type { Meta, StoryObj } from "@storybook/react";
