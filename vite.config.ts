@@ -12,12 +12,13 @@ export default defineConfig({
       fileName: (format) => `ph-ui.${format}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom", "tailwindcss"],
+      external: ["react", "react-dom", "tailwindcss", "recoil"],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
           tailwindcss: "tailwindcss",
+          recoil: "Recoil",
         },
       },
     },
