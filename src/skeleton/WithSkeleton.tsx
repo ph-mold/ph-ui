@@ -9,7 +9,7 @@ interface Props {
   minDuration?: number;
 }
 
-export default function WithSkeleton({
+export function WithSkeleton({
   isLoading,
   skeleton,
   children,

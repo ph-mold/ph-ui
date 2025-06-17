@@ -1,8 +1,8 @@
 import { ReactNode, useEffect } from "react";
 import { createPortal } from "react-dom";
-import Button from "../Button";
+import { Button } from "..";
 
-interface AlertModalProps {
+interface Props {
   open: boolean;
   onClose?: () => void;
   onAccept?: () => void;
@@ -15,7 +15,7 @@ interface AlertModalProps {
   loading?: boolean;
 }
 
-export default function AlertModal({
+export function Alert({
   open,
   onClose,
   onAccept,
@@ -26,7 +26,7 @@ export default function AlertModal({
   cancelLabel = "취소",
   showCancelButton = true,
   loading = false,
-}: AlertModalProps) {
+}: Props) {
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";

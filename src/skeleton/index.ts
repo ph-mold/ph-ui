@@ -1,2 +1,2 @@
 export { Skeleton } from "./Skeleton";
-export { default as WithSkeleton } from "./WithSkeleton";
+export { WithSkeleton } from "./WithSkeleton";

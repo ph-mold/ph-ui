@@ -1,8 +1,8 @@
 import { useRecoilState } from "recoil";
 import { alertQueueState } from "./alertAtom";
-import Alert from "./Alert";
+import { Alert } from "./Alert";
 
-export default function GlobalAlert() {
+export function GlobalAlert() {
   const [queue, setQueue] = useRecoilState(alertQueueState);
   const current = queue[queue.length - 1];
 
