@@ -1,3 +1,5 @@
+"use client";
+
 import { useDelayedRender } from "../hooks/useDelayRender";
 import { AnimatePresence, motion } from "framer-motion";
 

@@ -1,3 +1,5 @@
+"use client";
+
 import { useRecoilState } from "recoil";
 import { alertQueueState } from "./alertAtom";
 import { Alert } from "./Alert";

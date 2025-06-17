@@ -1,4 +1,6 @@
-import { ReactNode, useEffect } from "react";
+"use client";
+
+import { ReactNode, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Button } from "..";
 
@@ -27,7 +29,17 @@ export function Alert({
   showCancelButton = true,
   loading = false,
 }: Props) {
+  const [mounted, setMounted] = useState(false);
+  const [container, setContainer] = useState<HTMLElement | null>(null);
+
   useEffect(() => {
+    setMounted(true);
+    setContainer(document.getElementById("modal-root"));
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     if (open) {
       document.body.style.overflow = "hidden";
       document.body.style.touchAction = "none";
@@ -39,11 +51,7 @@ export function Alert({
       document.body.style.overflow = "auto";
       document.body.style.touchAction = "auto";
     };
-  }, [open]);
-
-  if (typeof window === "undefined") return null;
-  const container = document.getElementById("modal-root");
-  if (!container || !open) return null;
+  }, [open, mounted]);
 
   const handleAccept = () => {
     onAccept?.();
@@ -53,6 +61,8 @@ export function Alert({
     onCancel?.();
     onClose?.();
   };
+
+  if (!mounted || !container || !open) return null;
 
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center">
