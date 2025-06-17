@@ -1,10 +1,10 @@
-import Button from "@/Button";
 import {
   ChevronLeft,
   ChevronRight,
   ChevronsLeft,
   ChevronsRight,
 } from "lucide-react";
+import { Button } from "..";
 
 export interface IPaginated<T> {
   items: T[];
