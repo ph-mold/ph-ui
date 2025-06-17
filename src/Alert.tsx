@@ -63,7 +63,7 @@ export default function AlertModal({
       />
 
       {/* Modal Content */}
-      <div className="relative z-10 mx-4 w-[90%] max-w-[600px] rounded-lg bg-white p-3 shadow-xl sm:mx-10 sm:w-fit sm:min-w-[300px]">
+      <div className="relative z-10 mx-4 w-[90%] max-w-[600px] rounded-lg bg-background p-3 shadow-xl sm:mx-10 sm:w-fit sm:min-w-[300px]">
         <div className="flex flex-col gap-2">
           {/* Title */}
           {title && <h2 className="mr-auto ml-2 font-semibold">{title}</h2>}

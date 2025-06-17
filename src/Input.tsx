@@ -27,9 +27,9 @@ const sizeStyles: Record<Size, string> = {
 };
 
 const variantStyles: Record<Variant, string> = {
-  outlined: "border border-background2 bg-reverseForeground",
-  filled: "bg-background2 border border-transparent",
-  standard: "border-b border-background2 bg-transparent",
+  outlined: "border border-border-strong bg-reverseForeground",
+  filled: "bg-background2 border border-border-strong",
+  standard: "border-b border-border-strong bg-transparent rounded-none",
 };
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
