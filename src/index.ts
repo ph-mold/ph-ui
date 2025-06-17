@@ -9,3 +9,4 @@ export { default as Modal } from "./Modal";
 
 export * from "./Skeleton";
 export * from "./Alert";
+export * from "./Pagination";
