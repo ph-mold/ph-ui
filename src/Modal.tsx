@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
@@ -56,7 +58,7 @@ export default function Modal({
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-end justify-center bg-black/30 md:items-center"
+          className="fixed inset-0 z-50 flex items-end justify-center bg-reverseBackground/30 md:items-center"
           initial="hidden"
           animate="visible"
           exit="hidden"
@@ -71,14 +73,14 @@ export default function Modal({
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className={clsx(
               className,
-              "flex w-full flex-col bg-white shadow-xl",
+              "flex w-full flex-col bg-background shadow-xl",
               isMobile
                 ? "absolute right-0 bottom-0 left-0 h-[80dvh] rounded-t-2xl"
                 : "relative max-h-[90vh] max-w-lg rounded-2xl"
             )}
           >
             {title && (
-              <div className="border-background2 flex items-center justify-between border-b px-4 pt-4 pb-2">
+              <div className="border-border-light flex items-center justify-between border-b px-4 pt-4 pb-2">
                 <div className="text-lg font-semibold">
                   {typeof title === "string" ? <h2>{title}</h2> : title}
                 </div>

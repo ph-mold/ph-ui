@@ -6,6 +6,7 @@ export { default as Tab } from "./Tab";
 export { default as TextArea } from "./TextArea";
 export { default as Input } from "./Input";
 export { default as Modal } from "./Modal";
-export { default as Alert } from "./Alert";
 
 export * from "./Skeleton";
+export * from "./Alert";
+export * from "./Pagination";

@@ -1,3 +1,5 @@
+"use client";
+
 import { useDelayedRender } from "../hooks/useDelayRender";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -9,7 +11,7 @@ interface Props {
   minDuration?: number;
 }
 
-export default function WithSkeleton({
+export function WithSkeleton({
   isLoading,
   skeleton,
   children,

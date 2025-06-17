@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode, ElementType } from "react";
 import clsx from "clsx";
 import { Loader2 } from "lucide-react";
@@ -5,7 +7,7 @@ import { motion } from "framer-motion";
 
 type Variant = "contained" | "outlined" | "text";
 type Color = "primary" | "secondary" | "error";
-type Size = "small" | "medium" | "large";
+type Size = "xs" | "small" | "medium" | "large";
 
 interface ButtonProps {
   children: ReactNode;
@@ -34,6 +36,7 @@ const variantStyles: Record<Variant, string> = {
 };
 
 const sizeStyles: Record<Size, string> = {
+  xs: "text-xs font-sm px-2 py-1",
   small: "text-sm font-base px-3 py-1.5",
   medium: "text-base font-medium px-4 py-2",
   large: "text-lg font-semibold px-5 py-3",

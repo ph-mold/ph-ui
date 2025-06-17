@@ -1,8 +1,10 @@
-import { ReactNode, useEffect } from "react";
-import { createPortal } from "react-dom";
-import Button from "./Button";
+"use client";
 
-interface AlertModalProps {
+import { ReactNode, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import { Button } from "..";
+
+interface Props {
   open: boolean;
   onClose?: () => void;
   onAccept?: () => void;
@@ -15,7 +17,7 @@ interface AlertModalProps {
   loading?: boolean;
 }
 
-export default function AlertModal({
+export function Alert({
   open,
   onClose,
   onAccept,
@@ -26,8 +28,18 @@ export default function AlertModal({
   cancelLabel = "취소",
   showCancelButton = true,
   loading = false,
-}: AlertModalProps) {
+}: Props) {
+  const [mounted, setMounted] = useState(false);
+  const [container, setContainer] = useState<HTMLElement | null>(null);
+
   useEffect(() => {
+    setMounted(true);
+    setContainer(document.getElementById("modal-root"));
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     if (open) {
       document.body.style.overflow = "hidden";
       document.body.style.touchAction = "none";
@@ -39,11 +51,7 @@ export default function AlertModal({
       document.body.style.overflow = "auto";
       document.body.style.touchAction = "auto";
     };
-  }, [open]);
-
-  if (typeof window === "undefined") return null;
-  const container = document.getElementById("modal-root");
-  if (!container || !open) return null;
+  }, [open, mounted]);
 
   const handleAccept = () => {
     onAccept?.();
@@ -54,6 +62,8 @@ export default function AlertModal({
     onClose?.();
   };
 
+  if (!mounted || !container || !open) return null;
+
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Backdrop */}
@@ -63,7 +73,7 @@ export default function AlertModal({
       />
 
       {/* Modal Content */}
-      <div className="relative z-10 mx-4 w-[90%] max-w-[600px] rounded-lg bg-white p-3 shadow-xl sm:mx-10 sm:w-fit sm:min-w-[300px]">
+      <div className="relative z-10 mx-4 w-[90%] max-w-[600px] rounded-lg bg-background p-3 shadow-xl sm:mx-10 sm:w-fit sm:min-w-[300px]">
         <div className="flex flex-col gap-2">
           {/* Title */}
           {title && <h2 className="mr-auto ml-2 font-semibold">{title}</h2>}
