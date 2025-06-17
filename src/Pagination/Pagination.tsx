@@ -12,17 +12,18 @@ export interface IPaginated<T> {
   page: number;
   limit: number;
 }
-interface PaginationProps {
+
+interface Props {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
 }
 
-export function Pagination({
+export default function Pagination({
   currentPage,
   totalPages,
   onPageChange,
-}: PaginationProps) {
+}: Props) {
   const maxVisiblePages = 5;
   const halfVisiblePages = Math.floor(maxVisiblePages / 2);
 

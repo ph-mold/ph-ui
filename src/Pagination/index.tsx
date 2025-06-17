@@ -1,2 +1,2 @@
-export { Pagination } from "./Pagination";
-export { IPaginated } from "./Pagination";
+export { default as Pagination } from "./Pagination";
+export type { IPaginated } from "./Pagination";
