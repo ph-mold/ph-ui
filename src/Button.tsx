@@ -76,23 +76,35 @@ export default function Button({
   as: Component = "button",
   href,
 }: ButtonProps) {
+  const isIconOnly = !children && (startIcon || endIcon || loading);
+
   const classes = clsx(
     className,
     baseStyles,
     variantStyles[variant],
-    sizeStyles[size],
+    isIconOnly
+      ? {
+          xs: "p-1",
+          small: "p-1.5",
+          medium: "p-2",
+          large: "p-3",
+        }[size]
+      : sizeStyles[size],
     colorStyles[color][variant],
     fullWidth && "w-full"
   );
 
   const content = (
-    <>
+    <div
+      className={clsx(
+        "flex items-center justify-center",
+        !isIconOnly && "gap-1"
+      )}
+    >
       {loading ? <Loader2 className="size-4 animate-spin" /> : startIcon}
-      <span className={clsx("size-full", loading && "opacity-0")}>
-        {children}
-      </span>
+      <span>{children}</span>
       {endIcon && !loading && endIcon}
-    </>
+    </div>
   );
 
   if (Component === "button") {
